@@ -52,7 +52,6 @@ nav li a:hover {
 	color: #ddd;
 	transform: scale(1.05);		
 }
-
 /* Main Section */ 
 main {
 	display: flex;
@@ -69,7 +68,13 @@ main p {
 	color: #94a4b4;
 	font-size: 2rem;
 }
-
+main div {
+	display: none;
+	background-color: white;
+	height: 0.5vw;
+	width: 60vw;
+	margin: 5vw 0px;
+}
 /* Socials */
 .socials {
 	display: fixed;
@@ -85,15 +90,17 @@ main p {
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
-	left: -80px;
-	width: 140px;
+	left: -90px;
+	width: 150px;
+	padding: 3px;
 	font-size: 1rem;
 	font-weight: 600;
 	color: white;
 	transition: left 0.18s ease-out;
 }
 .socials li:hover {
-	left: 10px;
+	background-color: #3f4750;
+	left: 0px;
 	justify-content: space-around;
 }
 .socials i {
@@ -102,7 +109,22 @@ main p {
 .socials a:last-child i {
 	font-size: 2.5rem;
 }
-
+/* Small Socials */ 
+.small-socials {
+	display: none;
+	position: relative;
+	justify-content: space-around;
+	width: 80vw;
+	top: 0;
+	left: 0;
+}
+.small-socials li {
+	flex-direction: column-reverse;
+	align-items: space-between;
+	left:0;
+	height: 5rem;
+	width: auto;
+}
 
 /* Projects */ 
 .projects {
@@ -116,7 +138,6 @@ main p {
 		". p4 p5 p6 .";
 	margin-top: 5%;
 	height: 55vw;
-	/* height: 80vh; */
 	width: 100%;
 }
 .projects h2 {
@@ -161,9 +182,28 @@ footer {
 footer a {
 	color: white;
 }
+/* hamburger */
+.burger {
+	display: none;
+	position: absolute;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 3.4rem;
+	height: 2.5rem;
+	top: 1.5rem;
+	right: 1.5rem;
+	cursor: pointer;
+}
+.burger div {
+	width: 100%;
+	height: 5px;
+	background-color: white;
+}
 
 
-@media only screen and (min-width: 701px) and (max-width: 1200px) {
+
+
+@media only screen and (max-width: 1200px) {
 	.projects {
 		grid-template-columns: 50px 1fr 1fr 50px;
 		grid-template-rows: 10% 1fr 1fr 1fr; 
@@ -172,20 +212,78 @@ footer a {
 			". p1 p2 ."
 			". p3 p4 ."
 			". p5 p6 .";
-		height: 150vw;
+		height: 130vw;
 	}
 }
 
+
 @media only screen and (max-width: 768px) {
-	main h2 {
-		font-size: 3rem;
+	/* burger menu */
+	.burger {
+		transition: all 0.05s linear;
+		display: flex;
 	}
-	main p {
-		font-size: 2rem;
+	nav ul {
+		display: none;	
 	}
 
+	/* main divider display */
+	main div {
+		display: block;
+	}
+	
+	/* social display */
+	.socials {
+		display: none;
+	}
+	.small-socials {
+		display: flex;
+	}
+	/* Nav */ 
+	nav {
+		background-color: #171a1d;
+	}	
+	/* Nav Menu */
+	nav ul.open {
+		display: flex;
+		position: absolute;
+		width: 100%;
+		height: 8rem;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		top: 5rem;
+		left: 0;
+		background-color: #94a4b4;
+	}
+	nav ul.open a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 4rem;
+		color: #171a1d;
+	}
+	nav ul.open a:hover {
+		background-color: #aebac6;
+	}
+	.burger.open {
+		flex-direction: column;
+		transform: rotate(-90deg);
+		width: 3rem;
+	}
+	
+	/* main text font */
+	main h2 {
+		font-size: 12vw;
+	}
+	main p {
+		font-size: 7vw;
+	}
+
+	/* project grid */
 	.projects {
-		grid-template-columns: 2.5rem 1fr 2.5rem;
+		grid-template-columns: 3vw 1fr 3vw;
 		grid-template-rows: 5% 1fr 1fr 1fr 1fr 1fr 1fr; 
 		grid-template-areas: 
 			". h2 ."
@@ -198,42 +296,35 @@ footer a {
 		height: 400vw;
 	}
 	.projects h2 {
-		font-size: 1.5rem;
+		font-size: 6vw;
 	}
-	.socials {
-		left: -10px;
+
+	/* social display */
+	.socials i, .socials a:last-child i{		
+		font-size: 9vw;
 	}
-	.socials i {
-		font-size: 3rem;
+	.socials li {
+		height: 14vw;
+		font-size: 2.8vw;
 	}
-	.socials a:last-child i {
-		font-size: 2.5rem;
+	.socials li:hover {
+		background-color: initial;
 	}
+	/* footer */
 	footer {
 		flex-direction: column;
 	}
 }
 @media only screen and (max-width: 500px) {
-	main h2 {
-		font-size: 2.2rem;
-	}
-	main p {
-		font-size: 1.4rem;
-	}
-
 	.projects {
-		height: 350vw;
+		height: 420vw;
 	}
 	.projects h2 {
 		text-align: center;
-		font-size: 1.5rem;
 	}
-	.socials i {
-		font-size: 2.5rem;
-	}
-	.socials a:last-child i {
-		font-size: 2.1rem;
-	}
+
+
+	/* footer */
 	footer {
 		text-align: center;
 	}
