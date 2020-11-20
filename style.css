@@ -244,17 +244,17 @@ main div {
 	flex-wrap: wrap;
 }
 .tool {
-	padding: 0.2rem 0.5rem;
+	padding: 0.2em 0.5em;
 	margin-right: 0.3rem;
-	font-size: 0.9rem;
-	height: 1.8rem;
+	font-size: 0.9em;
+	height: 1.8em;
 	color: #94a4b4;
 	border: 1px solid #171a1d;
 }
 .description {
 	color: #94a4b4;
-	font-size: 0.9rem;
-	line-height: 1.2rem;
+	font-size: 0.9em;
+	line-height: 1.2em;
 	overflow-y: scroll;
 }
 .links {
@@ -364,9 +364,105 @@ footer a {
 			". p5 p6 .";
 		height: 130vw;
 	}
+	.modal {
+		width: 80%;
+	}
 }
 
+@media only screen and (max-width: 830px) {	
+	.modal {
+		flex-direction: column;
+		width: 90%;
+	}
+	.modal.open {
+		display: flex;
+	}
+	.modal {
+		font-size: 3vw;
+		height: 90vh;
+		padding: 1.5rem 2rem;
+	}
+	.display {
+		border: 2px solid #94a4b4;
+		width: 80%;
+		align-self: center;
+		height: 150vw;
+	}
+	.pname {
+		text-align: center;
+		font-size: 5.5vw;
+	}
+	.description {
+		height: 90vw;
+		font-size: 0.8em;
+	}
+	.links {
+		margin-top: 0.5rem;
+	}
+	.tools {
+		justify-content: space-around;
+	}
+	.tool {
+		margin-top: 0.3em;
+		margin-right: 0;
+		font-size: 0.8em;
+	}
+	/* See more */
+	.project:hover > .more {
+		display: flex;
+	}
+	.more {
+		display: flex; 
+		justify-content: center;
+		align-items: center;
+		font-size: 3.6vw;
+		width: 35%;
+		height: 14%;
+		margin-bottom: 2vw;
+		padding: 3vw 5vw;
+	}
+	
+}
 
+@media only screen and (max-width: 830px) and (orientation: landscape){	
+	.modal {
+		flex-direction: column;
+	}
+	.modal.open {
+		display: grid;
+	}
+	.modal {
+		font-size: 2vw;
+		height: 90vh;
+	}
+	.display {
+		border: 2px solid #94a4b4;
+		height: 100%;
+		width: auto;
+	}
+	.pname {
+		text-align: center;
+		font-size: 3vw;
+	}
+	.description {
+		height: auto;
+	}
+	.links {
+		margin-top: 0.5rem;
+	}
+	.tools {
+		justify-content: flex-start;
+	}
+	.tool {
+		margin-top: 0.3em;
+		margin-right: 0.5rem;
+		font-size: 0.9em;
+	}
+	.more {
+		font-size: 1.8vw;
+		width: 55%;
+	}
+}
 @media only screen and (max-width: 768px) {
 	/* burger menu */
 	.burger {
@@ -453,6 +549,10 @@ footer a {
 	.socials i, .socials a:last-child i{		
 		font-size: 9vw;
 	}
+	.socials a{
+		width: 15%;
+		left: 0;
+	}
 	.socials li {
 		height: 14vw;
 		font-size: 2.8vw;
@@ -466,6 +566,23 @@ footer a {
 	}
 }
 @media only screen and (max-width: 500px) {
+	.modal {
+		font-size: 4vw;
+		height: 80vh;
+		padding: 1rem 2rem;
+	}
+	.tools {
+		justify-content: flex-start;
+	}
+	.tool {
+		margin-right: 0.3rem;
+	}
+	.pname {
+		text-align: left;
+	}
+	.display {
+		width: 100%;
+	}
 	.projects {
 		height: 420vw;
 	}
