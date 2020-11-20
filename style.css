@@ -83,24 +83,27 @@ main div {
 	list-style: none;
 }
 .socials a {
+	position: relative;
 	text-decoration: none;
+	left: -90px;
+	transition: left 0.18s ease-out;
 }
 .socials li {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
-	left: -90px;
 	width: 150px;
 	padding: 3px;
 	font-size: 1rem;
 	font-weight: 600;
 	color: white;
-	transition: left 0.18s ease-out;
 }
-.socials li:hover {
-	background-color: #3f4750;
+.socials a:hover {
 	left: 0px;
+}
+.socials a:hover > li {
+	background-color: #3f4750;
 	justify-content: space-around;
 }
 .socials i {
@@ -149,6 +152,9 @@ main div {
 	font-size: 2.5rem;
 }
 .project {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
 	border: 2px solid #fff;
 	border-radius: 0.5rem;
 }
@@ -170,6 +176,71 @@ main div {
 .project[data-pnum="6"] {
 	grid-area: p6;
 }
+
+.more {
+	display: none;
+	background-color: #ddd;
+	color: #171a1d;
+	border-radius: 0.2rem;
+	font-size: 1.1rem;
+	padding: 1rem 2rem;
+	cursor: pointer;
+	margin-bottom: 2rem;
+	transition: all 0.2s linear;
+}
+.project:hover > .more {
+	display: block;
+}
+.more:hover {
+	transform: scale(1.05);
+	background-color: #ccc;
+}
+
+/* Modals */ 
+.back-modal {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0, 0.4);
+}
+.modal {
+	display: none;
+	position: absolute;
+	width: 50rem;
+	height: 35rem;
+	background-color: #22262a;
+}
+.modal.open, .back-modal.open {
+	display: flex;
+}
+.exit {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 2.5rem;
+	height: 2.5rem;
+	top: 0.5rem;
+	right: 0.5rem;
+	cursor: pointer;
+}
+.xbar {
+	position: absolute;
+	background-color: white;
+	height: 2px;
+	width: 100%;
+	transform: rotate(45deg);
+}
+.xbar:first-child {
+	transform: rotate(-45deg);
+}
+
+
 
 /* Footer */ 
 footer {
