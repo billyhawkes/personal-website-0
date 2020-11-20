@@ -383,7 +383,7 @@ footer a {
 		padding: 1.5rem 2rem;
 	}
 	.display {
-		margin-top: 2rem;
+		margin-top: 2.5rem;
 		border: 2px solid #94a4b4;
 		width: 80%;
 		align-self: center;
@@ -409,7 +409,10 @@ footer a {
 		font-size: 0.8em;
 	}
 	.modal h4, .description {
-		margin-top: 1rem;
+		margin-top: 0.8rem;
+	}
+	.links {
+		margin-top: 0.3rem;
 	}
 	/* See more */
 	.project:hover > .more {
