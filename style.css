@@ -383,10 +383,11 @@ footer a {
 		padding: 1.5rem 2rem;
 	}
 	.display {
+		margin-top: 2rem;
 		border: 2px solid #94a4b4;
 		width: 80%;
 		align-self: center;
-		height: 150vw;
+		height: 140vw;
 	}
 	.pname {
 		text-align: center;
@@ -406,6 +407,9 @@ footer a {
 		margin-top: 0.3em;
 		margin-right: 0;
 		font-size: 0.8em;
+	}
+	.modal h4, .description {
+		margin-top: 1rem;
 	}
 	/* See more */
 	.project:hover > .more {
